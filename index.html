@@ -13,13 +13,13 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
-            color: white; /* Zwarte tekst voor betere leesbaarheid */
+            color: white; /* Witte tekst voor betere leesbaarheid */
         }
         h1 {
-            color: white; /* Zwarte kleur voor de titel */
+            color: white; /* Witte kleur voor de titel */
         }
         p {
-            color: white; /* Zwarte kleur voor de beschrijving */
+            color: white; /* Witte kleur voor de beschrijving */
         }
         button {
             background-color: #4CAF50; /* Groene achtergrondkleur */
@@ -34,6 +34,9 @@
         button:hover {
             background-color: #45a049; /* Donkergroene kleur bij hover */
         }
+        #secretButton {
+            display: none; /* Verberg de geheime knop */
+        }
     </style>
 </head>
 <body>
@@ -44,8 +47,13 @@
     <button onclick="window.location.href='https://foto.overmans.nl/'">Fotos</button>
     <button onclick="window.location.href='https://zieschier.overmans.nl/'">Zie Schier</button>
     <button onclick="window.location.href='https://zshop.overmans.nl/'">Schiervogel</button>
-	<button onclick="window.location.href='https://x.thunkable.com/projectPage/6746eac3cdf2d66175cd8130'">App</button>
+    <button onclick="window.location.href='https://x.thunkable.com/projectPage/6746eac3cdf2d66175cd8130'">App</button>
+    <button id="secretButton" onclick="window.location.href='https://matsdevoficcial.github.io/lijstje'">Verlanglijstje</button>
 
-    <script src="script.js"></script>
+    <script>
+        document.body.addEventListener('click', function() {
+            document.getElementById('secretButton').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
