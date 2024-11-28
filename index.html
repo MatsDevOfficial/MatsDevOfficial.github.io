@@ -54,19 +54,51 @@
             0% { top: -10px; transform: translateX(0); }
             100% { top: 100vh; transform: translateX(100px); }
         }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #E0E0E0;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="https://github.com/MatsDevOfficial">Github</a>
+        <a href="https://foto.overmans.nl/">Fotos</a>
+        <a href="https://zieschier.overmans.nl/">Zie Schier</a>
+        <a href="https://zshop.overmans.nl/">Schiervogel</a>
+        <a href="https://x.thunkable.com/projectPage/6746eac3cdf2d66175cd8130">App</a>
+    </div>
+
     <h1>Welkom op mijn website! Zelf gecodeerd.</h1>
     <p id="intro">Dit is een eenvoudige website met JavaScript.</p>
 
-    <button onclick="window.location.href='https://github.com/MatsDevOfficial'">Github</button>
-    <button onclick="window.location.href='https://foto.overmans.nl/'">Fotos</button>
-    <button onclick="window.location.href='https://zieschier.overmans.nl/'">Zie Schier</button>
-    <button onclick="window.location.href='https://zshop.overmans.nl/'">Schiervogel</button>
-    <button onclick="window.location.href='https://x.thunkable.com/projectPage/6746eac3cdf2d66175cd8130'">App</button>
-
     <div id="clock"></div>
+
+    <img src="kersticoon1.png" alt="Kersticoon 1" class="icon">
+    <img src="kersticoon2.png" alt="Kersticoon 2" class="icon">
+    <img src="kersticoon3.png" alt="Kersticoon 3" class="icon">
+    <img src="kersticoon4.png" alt="Kersticoon 4" class="icon">
 
     <script>
         function updateClock() {
