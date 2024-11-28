@@ -3,33 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kerst Verlanglijstje</title>
+    <title>Mats Overmans Homepage</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('https://thumbs.dreamstime.com/b/idyllisch-de-herfstlandschap-met-bergmeer-en-alpen-46630397.jpg'); /* Achtergrondafbeelding */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: white; /* Zwarte tekst voor betere leesbaarheid */
+        }
+        h1 {
+            color: white; /* Zwarte kleur voor de titel */
+        }
+        p {
+            color: white; /* Zwarte kleur voor de beschrijving */
+        }
+        button {
+            background-color: #4CAF50; /* Groene achtergrondkleur */
+            color: white;
+            padding: 15px 32px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049; /* Donkergroene kleur bij hover */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Kerst Verlanglijstje</h1>
-    </header>
-    <main>
-        <form id="wishlist-form">
-            <input type="text" id="item" placeholder="Voeg een item toe" required>
-            <button type="submit">Toevoegen</button>
-        </form>
-        <ul id="wishlist"></ul>
-        <a href="saved.html">Bekijk opgeslagen lijstje</a>
-    </main>
-    <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-    </div>
-    <script src="actions.js"></script>
+    <h1>Welkom op mijn website! Zelf gecodeerd.</h1>
+    <p id="intro">Dit is een eenvoudige website met JavaScript.</p>
+
+    <button onclick="window.location.href='https://github.com/MatsDevOfficial'">Github</button>
+    <button onclick="window.location.href='https://foto.overmans.nl/'">Fotos</button>
+    <button onclick="window.location.href='https://zieschier.overmans.nl/'">Zie Schier</button>
+    <button onclick="window.location.href='https://zshop.overmans.nl/'">Schiervogel</button>
+	<button onclick="window.location.href='https://x.thunkable.com/projectPage/6746eac3cdf2d66175cd8130'">App</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
