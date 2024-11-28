@@ -7,7 +7,7 @@
     <style>
         body {
             background-color: #228B22; /* Groene achtergrondkleur */
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Kerstig lettertype */
             text-align: center;
             padding: 50px;
             color: white; /* Witte tekst voor betere leesbaarheid */
@@ -35,9 +35,23 @@
         }
         #clock {
             font-size: 2em;
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Kerstig lettertype */
             color: #FFD700; /* Gouden kleur voor de klok */
             margin-top: 20px;
+        }
+        .snowflake {
+            color: #FFF;
+            font-size: 1em;
+            position: absolute;
+            top: -10px;
+            z-index: 9999;
+            user-select: none;
+            cursor: default;
+            animation: fall 10s linear infinite;
+        }
+        @keyframes fall {
+            0% { top: -10px; transform: translateX(0); }
+            100% { top: 100vh; transform: translateX(100px); }
         }
     </style>
 </head>
@@ -65,6 +79,22 @@
 
         setInterval(updateClock, 1000);
         updateClock(); // Initial call to display clock immediately
+
+        // Snowflake effect
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = `${Math.random() * 100}vw`;
+            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 200);
     </script>
 </body>
 </html>
