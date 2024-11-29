@@ -1,124 +1,170 @@
 <!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
+<html style="font-size: 16px;" lang="nl"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mats Overmans Homepage</title>
-    <style>
-        body {
-            background-color: #2E8B57; /* Donkergroene achtergrondkleur */
-            font-family: 'Helvetica Neue', sans-serif; /* Modern lettertype */
-            text-align: center;
-            padding: 50px;
-            color: #F5F5F5; /* Lichte tekst voor betere leesbaarheid */
-            overflow-y: scroll;
-        }
-        h1 {
-            color: #FFD700; /* Gouden kleur voor de titel */
-            text-shadow: 2px 2px 4px #000000; /* Schaduw voor een feestelijk effect */
-            margin-top: 80px; /* Extra ruimte boven de titel */
-        }
-        p {
-            color: #F5F5F5; /* Lichte kleur voor de beschrijving */
-        }
-        button {
-            background-color: #B22222; /* Donkerrode achtergrondkleur */
-            color: #F5F5F5; /* Lichte tekst op de knoppen */
-            padding: 15px 32px;
-            margin: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            box-shadow: 2px 2px 5px #000000; /* Schaduw voor een feestelijk effect */
-        }
-        button:hover {
-            background-color: #FF6347; /* Lichtere rode kleur bij hover */
-        }
-        #clock {
-            font-size: 2em;
-            font-family: 'Helvetica Neue', sans-serif; /* Modern lettertype */
-            color: #FFD700; /* Gouden kleur voor de klok */
-            margin-top: 20px;
-        }
-        .snowflake {
-            color: #FFF;
-            font-size: 1em;
-            position: absolute;
-            top: -10px;
-            z-index: 9999;
-            user-select: none;
-            cursor: default;
-            animation: fall 10s linear infinite;
-        }
-        @keyframes fall {
-            0% { top: -10px; transform: translateX(0); }
-            100% { top: 100vh; transform: translateX(100px); }
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #B22222; /* Kerstrode achtergrondkleur */
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        .navbar a {
-            color: #F5F5F5;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .navbar a:hover {
-            background-color: #FF6347;
-        }
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <a href="https://github.com/MatsDevOfficial">Github</a>
-        <a href="https://foto.overmans.nl/">Fotos</a>
-        <a href="https://zieschier.overmans.nl/">Zie Schier</a>
-        <a href="https://zshop.overmans.nl/">Schiervogel</a>
-        <a href="https://x.thunkable.com/projectPage/6746eac3cdf2d66175cd8130">App</a>
-    </div>
-
-    <h1>Welkom op mijn website! Zelf gecodeerd.</h1>
-    <p id="intro">Dit is een eenvoudige website met JavaScript.</p>
-
-    <div id="clock"></div>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const timeString = `${hours}:${minutes}:${seconds}`;
-            document.getElementById('clock').textContent = timeString;
-        }
-
-        setInterval(updateClock, 1000);
-        updateClock(); // Initial call to display clock immediately
-
-        // Snowflake effect
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.textContent = '❄';
-            snowflake.style.left = `${Math.random() * 100}vw`;
-            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            document.body.appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
-        }
-
-        setInterval(createSnowflake, 200);
-    </script>
-</body>
-</html>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Innoveer uw toekomst, Transformeer uw merk, Wat wij doen, Betrek uw publiek, Wat wij voor onze klanten kunnen doen, Neem contact met ons op">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery-1.9.1.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 7.0.5, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "/"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="/">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="https://website6397731.nicepage.io/Home.html?version=d861a2a9-89e4-0b12-e15a-eb2f5f76b1ed" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="nl"><header class="u-clearfix u-header u-header" id="sec-afbb"><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="padding: 10px 20px;">Thuis</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="https://zshop.overmans.nl" style="padding: 10px 20px;">Schiervogel</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="https://foto.overmans.nl" style="padding: 10px 20px;">Fotos</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="https://x.thunkable.com/projectPage/6746eac3cdf2d66175cd8130" style="padding: 10px 20px;">App</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Thuis</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="https://zshop.overmans.nl">Schiervogel</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="https://foto.overmans.nl">Fotos</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="https://x.thunkable.com/projectPage/6746eac3cdf2d66175cd8130">App</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="skrollable u-clearfix u-container-align-center u-image u-parallax u-shading u-section-1" id="sec-defb">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-center u-text u-text-default u-text-1">Innoveer uw toekomst</h1>
+        <p class="u-align-center u-text u-text-2"> Mijn naam is Mats Overmans, Ik ben een jonge ontwikkelaar die net begonnen is met programmeren in HTML, CSS, Python en JavaScript</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-valign-middle-lg u-valign-middle-md u-section-2" id="sec-e2ef">
+      <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-container-align-center-sm u-container-align-center-xs u-container-align-left-lg u-container-align-left-md u-container-align-left-xl u-container-style u-grey-5 u-layout-cell u-size-30 u-layout-cell-1">
+              <div class="u-container-layout u-valign-middle u-container-layout-1">
+                <h2 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-1">Transformeer uw merk</h2>
+                <p class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-2"> Laat mij een website voor u bouwen!<br>
+                </p>
+                <a href="mailto:619401@olz.nl?subject=Website%20maken" class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-black u-border-none u-btn u-button-style u-btn-1">Contact</a>
+              </div>
+            </div>
+            <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="712" data-image-height="897">
+              <div class="u-container-layout u-container-layout-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-container-align-center u-section-3" id="sec-3ac7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-default u-text-1">Wat wij doen</h2>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-container-style u-grey-5 u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <h3 class="u-align-center u-text u-text-default u-text-2">1</h3>
+                <h6 class="u-align-center u-text u-text-default u-text-3">Websites bouwen </h6>
+              </div>
+            </div>
+            <div class="u-container-align-center u-container-style u-grey-5 u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-2">
+                <h3 class="u-align-center u-text u-text-default u-text-4">2</h3>
+                <h6 class="u-align-center u-text u-text-default u-text-5">Custom CCS waar nodig </h6>
+              </div>
+            </div>
+            <div class="u-container-style u-grey-5 u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-3">
+                <h3 class="u-align-center u-text u-text-default u-text-6">3</h3>
+                <h6 class="u-align-center u-text u-text-default u-text-7">Eventueel een beetje Python </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-section-4" id="sec-5a4f">
+      <div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-default u-text-1"> Wachten tot kerst</h2>
+        <div class="u-countdown u-countdown-1" data-target-date="Mon, 23 Dec 2024 23:00:26 GMT" data-for="everyone" data-time-left="750m" data-timer-id="0938" data-target-number="100" data-direction="down" data-start-time="Fri Nov 26 2021 18:35:06 GMT+0300 (Москва, стандартное время)" data-frequency="10s" data-after-count="none" data-redirect-url="https://">
+          <div class="u-countdown-wrapper u-spacing-20">
+            <div class="u-countdown-item u-countdown-years u-hidden u-palette-3-base u-radius-7 u-spacing-10 u-countdown-item-1">
+              <div class="u-countdown-counter u-spacing-0 u-countdown-counter-1"><div class="u-countdown-number u-text-palette-3-dark-2">0</div><div class="u-countdown-number u-hidden u-text-palette-3-dark-2">0</div></div>
+              <div class="u-countdown-label u-text-palette-3-dark-3 u-countdown-label-1">Years</div>
+            </div>
+            <div class="u-countdown-separator u-hidden u-text-palette-3-dark-2 u-countdown-separator-1">:</div>
+            <div class="u-countdown-days u-countdown-item u-palette-3-base u-radius-7 u-spacing-10 u-countdown-item-2">
+              <div class="u-countdown-counter u-spacing-0 u-countdown-counter-2"><div class="u-countdown-number u-text-palette-3-dark-2">2</div><div class="u-countdown-number u-text-palette-3-dark-2">4</div><div class="u-countdown-number u-hidden u-text-palette-3-dark-2">0</div></div>
+              <div class="u-countdown-label u-text-palette-3-dark-3 u-countdown-label-2">Days</div>
+            </div>
+            <div class="u-countdown-separator u-text-palette-3-dark-2 u-countdown-separator-2">:</div>
+            <div class="u-countdown-hours u-countdown-item u-palette-3-base u-radius-7 u-spacing-10 u-countdown-item-3">
+              <div class="u-countdown-counter u-spacing-0 u-countdown-counter-3"><div class="u-countdown-number u-text-palette-3-dark-2">1</div><div class="u-countdown-number u-text-palette-3-dark-2">4</div></div>
+              <div class="u-countdown-label u-text-palette-3-dark-3 u-countdown-label-3">Hours</div>
+            </div>
+            <div class="u-countdown-separator u-text-palette-3-dark-2 u-countdown-separator-3">:</div>
+            <div class="u-countdown-item u-countdown-minutes u-palette-3-base u-radius-7 u-spacing-10 u-countdown-item-4">
+              <div class="u-countdown-counter u-spacing-0 u-countdown-counter-4"><div class="u-countdown-number u-text-palette-3-dark-2">2</div><div class="u-countdown-number u-text-palette-3-dark-2">0</div></div>
+              <div class="u-countdown-label u-text-palette-3-dark-3 u-countdown-label-4">Minutes</div>
+            </div>
+            <div class="u-countdown-separator u-text-palette-3-dark-2 u-countdown-separator-4">:</div>
+            <div class="u-countdown-item u-countdown-seconds u-palette-3-base u-radius-7 u-spacing-10 u-countdown-item-5">
+              <div class="u-countdown-counter u-spacing-0 u-countdown-counter-5"><div class="u-countdown-number u-text-palette-3-dark-2">4</div><div class="u-countdown-number u-text-palette-3-dark-2">9</div></div>
+              <div class="u-countdown-label u-text-palette-3-dark-3 u-countdown-label-5">Seconds</div>
+            </div>
+            <div class="u-countdown-separator u-hidden u-text-palette-3-dark-2 u-countdown-separator-5">:</div>
+            <div class="u-countdown-item u-countdown-numbers u-hidden u-palette-3-base u-radius-7 u-spacing-10 u-countdown-item-6">
+              <div class="u-countdown-counter u-spacing-0 u-countdown-counter-6"><div class="u-countdown-number u-text-palette-3-dark-2">0</div><div class="u-countdown-number u-text-palette-3-dark-2">0</div><div class="u-countdown-number u-text-palette-3-dark-2">1</div><div class="u-countdown-number u-text-palette-3-dark-2">0</div><div class="u-countdown-number u-text-palette-3-dark-2">0</div></div>
+              <div class="u-countdown-label u-text-palette-3-dark-3 u-countdown-label-6">Items</div>
+            </div>
+          </div>
+          <div class="u-countdown-message u-hidden">
+            <p>Sorry, the time is up.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-f70c"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Voorbeeldtekst. Klik om het tekstelement te selecteren.</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <p class="u-text">
+        <span>This site was created with the </span>
+        <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow">
+          <span>Nicepage</span>
+        </a>
+      </p>
+    </section>
+  
+</body></html>
