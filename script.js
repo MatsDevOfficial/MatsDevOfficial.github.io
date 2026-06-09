@@ -104,6 +104,14 @@ var matsAIFeed = document.getElementById("MatsAIChatFeed");
 var matsAIInput = document.getElementById("MatsAIInput");
 var matsAISend = document.getElementById("MatsAISend");
 
+const HACKCLUB_API_KEY = window.HACKCLUB_API_KEY;
+const HACKCLUB_API_URL = "https://ai.hackclub.com/chat/completions";
+
+const NORMAL_SYSTEM = "You are MatsAI, a helpful and concise assistant built into MatsOS. Answer clearly and helpfully.";
+const DUMB_SYSTEM = "You are MatsAI, an extremely dumb AI assistant. You misunderstand everything, give hilariously wrong answers, confuse basic concepts, and are confidently incorrect. Keep responses short and absurd. Never admit you're wrong.";
+
+var messageCount = 0;
+
 matsAIClose.addEventListener("click", function () {
     closeWindow(matsAIWindow);
 });
@@ -116,14 +124,58 @@ function addBubble(text, sender) {
     matsAIFeed.scrollTop = matsAIFeed.scrollHeight;
 }
 
-function sendMessage() {
+function addTypingIndicator() {
+    var indicator = document.createElement("div");
+    indicator.classList.add("chatbubble", "ai", "typing-indicator");
+    indicator.id = "typingIndicator";
+    indicator.textContent = "...";
+    matsAIFeed.appendChild(indicator);
+    matsAIFeed.scrollTop = matsAIFeed.scrollHeight;
+}
+
+function removeTypingIndicator() {
+    var indicator = document.getElementById("typingIndicator");
+    if (indicator) indicator.remove();
+}
+
+async function sendMessage() {
     var text = matsAIInput.value.trim();
     if (!text) return;
+
+    messageCount++;
     addBubble(text, "user");
     matsAIInput.value = "";
-    setTimeout(function () {
-        addBubble("buy matsai premium", "ai");
-    }, 400);
+    matsAISend.disabled = true;
+    addTypingIndicator();
+
+    var systemPrompt = messageCount <= 2 ? NORMAL_SYSTEM : DUMB_SYSTEM;
+
+    try {
+        var response = await fetch(HACKCLUB_API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + HACKCLUB_API_KEY
+            },
+            body: JSON.stringify({
+                model: "gpt-4o-mini",
+                messages: [
+                    { role: "system", content: systemPrompt },
+                    { role: "user", content: text }
+                ]
+            })
+        });
+
+        var data = await response.json();
+        removeTypingIndicator();
+        var reply = data.choices?.[0]?.message?.content || "idk lol";
+        addBubble(reply, "ai");
+    } catch (err) {
+        removeTypingIndicator();
+        addBubble("uhh my brain stopped working. or maybe the internet? idk what internet is", "ai");
+    }
+
+    matsAISend.disabled = false;
 }
 
 matsAISend.addEventListener("click", sendMessage);
