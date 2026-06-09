@@ -1,5 +1,5 @@
 setInterval(function () {
-    document.querySelector("Klokje").innerHTML = new Date().toLocaleString();
+    document.querySelector("#Klokje").innerHTML = new Date().toLocaleString();
 }, 1000);
 
 
@@ -105,6 +105,7 @@ var matsAIInput = document.getElementById("MatsAIInput");
 var matsAISend = document.getElementById("MatsAISend");
 
 const HACKCLUB_API_KEY = window.HACKCLUB_API_KEY;
+if (!HACKCLUB_API_KEY) console.error("[MatsAI] config.js not loaded — API key missing. Did you add the GitHub Secret?");
 const HACKCLUB_API_URL = "https://ai.hackclub.com/chat/completions";
 
 const NORMAL_SYSTEM = "You are MatsAI, a helpful and concise assistant built into MatsOS. Answer clearly and helpfully.";
@@ -149,6 +150,13 @@ async function sendMessage() {
     addTypingIndicator();
 
     var systemPrompt = messageCount <= 2 ? NORMAL_SYSTEM : DUMB_SYSTEM;
+
+    if (!HACKCLUB_API_KEY) {
+        removeTypingIndicator();
+        addBubble("⚠️ API key niet geladen. Voeg HACKCLUB_API_KEY toe als GitHub Secret.", "ai");
+        matsAISend.disabled = false;
+        return;
+    }
 
     try {
         var response = await fetch(HACKCLUB_API_URL, {
