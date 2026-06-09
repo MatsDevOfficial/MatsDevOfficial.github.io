@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body style="background-image:url(./cdn/bg.png); background-size: cover;">
+
+    <div class="taskbar">
+        <p class="taskbarbutton" id="welcomeopen">
+            MatsOS
+        </p>
+        <p id="Klokje">
+
+        </p>
+    </div>
+    <div id="desktopApps">
+        <div class="desktopicon" onclick="openWindow(document.getElementById('MatsAI'))">
+            <img src="./matsai.png" style="width: 64px; height: 64px; border-radius: 16px;">
+            <p>MatsAI</p>
+        </div>
+    </div>
+    <div class="window" id="About" style="top: calc(50% - 90px); left: calc(50% - 180px);">
+        <div class="windowheader" id="Aboutheader">
+            <div class="closebutton" id="welcomeclose"></div>
+        </div>
+        <h1>Mats O</h1>
+        <h2>About me</h2>
+        <p>Hoi, ik ben Mats!
+            Ik ben een 15 jarige jongen uit Nederland, ik programmeer in HTML, CSS, JS, Typescript, Python, Arduino,
+            Java, PHP en Shell. I prefer hardware over software.
+            Ik ben lid van <a href="https://hackclub.com">Hackclub</a> en doe verder aan Scouting en Padel. Ook
+            fotografeer ik vaak, op het moment ben ik bezig met het maken van een showcasing website.</p>
+    </div>
+    <div class="window" id="MatsAI" style="top: calc(50% - 240px); left: calc(50% - 260px);">
+        <div class="windowheader" id="MatsAIheader">
+            <div class="closebutton" id="MatsAIClose"></div>
+            <span class="windowtitle">MatsAI</span>
+        </div>
+        <div class="chatfeed" id="MatsAIChatFeed"></div>
+        <div class="chatinput">
+            <input type="text" id="MatsAIInput" placeholder="Ask MatsAI anything..." />
+            <button id="MatsAISend">Send</button>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
