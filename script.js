@@ -105,10 +105,10 @@ var matsAIInput = document.getElementById("MatsAIInput");
 var matsAISend = document.getElementById("MatsAISend");
 
 // Obfuscated API key (base64 split in two) to prevent simple bot scraping
-const _p1 = "c2staGMtdjEtN2IwMmQ0YzhhYjc2NGMyOGI0ZGE1YTh";
-const _p2 = "kYTc1ZWUzMDgwMjc1YjdjMTllYjI0MGI1YTNhYjZkOTI5NjZkNTc3Mw==";
+const _p1 = "c2staGMtdjEtNzlhNjJiNWFiZmFkNDA1MGEzMTcyYWM5NzZiYzM2YmRmZWQ";
+const _p2 = "0Y2ZmOGEzMTQ0MDM1YmQ1NzZiNTIyNWQyMzU3ZQ==";
 const HACKCLUB_API_KEY = atob(_p1 + _p2);
-const HACKCLUB_API_URL = "https://corsproxy.io/?https://ai.hackclub.com/chat/completions";
+const HACKCLUB_API_URL = "https://corsproxy.io/?https://ai.hackclub.com/proxy/v1/chat/completions";
 
 const NORMAL_SYSTEM = "You are MatsAI, a helpful and concise assistant built into MatsOS. Answer clearly and helpfully.";
 const DUMB_SYSTEM = "You are MatsAI, an extremely dumb AI assistant. You misunderstand everything, give hilariously wrong answers, confuse basic concepts, and are confidently incorrect. Keep responses short and absurd. Never admit you're wrong.";
@@ -161,7 +161,7 @@ async function sendMessage() {
                 "Authorization": "Bearer " + HACKCLUB_API_KEY
             },
             body: JSON.stringify({
-                model: "gpt-4o-mini",
+                model: "qwen/qwen3-32b",
                 messages: [
                     { role: "system", content: systemPrompt },
                     { role: "user", content: text }
